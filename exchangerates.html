@@ -3,20 +3,33 @@
 </head>
 <body>
 
-  <!-- START CODE Attention! Do not modify this code; -->
   <script>
-    var fm = "USD";
-    var to = "AUD,GBP,EUR,CNY,PLN";
+    // reading quesry parameters
+    const params = new Proxy(new URLSearchParams(window.location.search), {
+        get: (searchParams, prop) => searchParams.get(prop),
+      });
+
+    // building colors map
+    const colors = new Map([
+      ["darkblue", "primary"],
+      ["blue", "info"],
+      ["green", "success"],
+      ["yellow", "warning"],
+      ["red", "danger"],
+      ["gray", "default"]
+    ]);
+
+    var fm = params.from;
+    var to = params.to;
     var tz = "timezone";
     var sz = "1x275";
-    var lg = "en";
-    var st = "primary";
+    var lg = params.lg;
+    var st = colors.get(params.color);
     var cd = 1;
     var am = 1
   </script>
-  <script src="//currencyrate.today/exchangerates">
+  <script src="https://currencyrate.today/exchangerates">
    </script>
-  <!-- Attention! Do not modify this code; END CODE -->
 
 </body>
 </html>
