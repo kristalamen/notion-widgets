@@ -4,12 +4,12 @@
 <body>
 
   <script>
-    // reading quesry parameters
+    // reading query parameters
     const params = new Proxy(new URLSearchParams(window.location.search), {
         get: (searchParams, prop) => searchParams.get(prop),
       });
 
-    // building colors map
+    // building colors map, available values: darkblue, blue, green, yellow, red, gray
     const colors = new Map([
       ["darkblue", "primary"],
       ["blue", "info"],
