@@ -18,11 +18,12 @@
       ["red", "danger"],
       ["gray", "default"]
     ]);
+    const size = getURLParameter("size");
 
     var fm = params.from;
     var to = params.to;
     var tz = "timezone";
-    var sz = "1x275";
+    var sz = size ? size : "1x275";
     var lg = params.lg;
     var st = colors.get(params.color);
     var cd = 1;
